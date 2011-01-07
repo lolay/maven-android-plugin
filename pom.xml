@@ -31,9 +31,9 @@
         <maven-plugin-plugin.version>2.6</maven-plugin-plugin.version>
     </properties>
     <scm>
-        <url>http://github.com/lolay/maven-android-plugin/tree/${scm.branch}</url>
+        <url>http://github.com/lolay/maven-android-plugin</url>
         <connection>scm:git:git://github.com/lolay/maven-android-plugin.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/lolay/maven-android-plugin.git</developerConnection>
+        <developerConnection>scm:git:git@github.com:lolay/maven-android-plugin.git</developerConnection>
     </scm>
     <issueManagement>
         <system>Google Code Issue Tracking</system>
