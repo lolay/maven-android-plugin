@@ -85,7 +85,15 @@ public class GenerateSourcesMojo extends AbstractAndroidMojo {
      *
      */
     protected File genDirectory;
-
+	
+	
+	/**
+	 * The package name for the generated R class.
+	 * @parameter default-value=""
+	 */
+	protected String customResourcePackageName;
+	
+	
     public void execute() throws MojoExecutionException, MojoFailureException {
 
         try {
@@ -306,6 +314,12 @@ public class GenerateSourcesMojo extends AbstractAndroidMojo {
             commands.add("-c");
             commands.add(configurations);
         }
+		
+		if(StringUtils.isNotBlank(customResourcePackageName)) {
+			commands.add("--custom-package");
+			commands.add(customResourcePackageName);
+		}
+					 
         getLog().info(getAndroidSdk().getPathForTool("aapt") + " " + commands.toString());
         try {
             executor.executeCommand(getAndroidSdk().getPathForTool("aapt"), commands, project.getBasedir(), false);
