@@ -234,15 +234,6 @@
                 </configuration>
             </plugin>
             <plugin>
-                <artifactId>maven-release-plugin</artifactId>
-                <configuration>
-                    <autoVersionSubmodules>true</autoVersionSubmodules>
-                    <useReleaseProfile>false</useReleaseProfile>
-                    <arguments>-Pofficial-release</arguments>
-                    <goals>plugin:report deploy site-deploy</goals>
-                </configuration>
-            </plugin>
-            <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
                     <source>1.5</source>
@@ -319,7 +310,7 @@
                         <inherited>true</inherited>
                         <artifactId>maven-deploy-plugin</artifactId>
                         <configuration>
-                            <updateReleaseInfo>true</updateReleaseInfo>
+							<altDeploymentRepository>site::default::${maven-site}</altDeploymentRepository>
                         </configuration>
                     </plugin>
                     <plugin>
